@@ -1,19 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const grid1 = document.getElementById("grid1");
-    const grid2 = document.getElementById("grid2");
-    const grid3 = document.getElementById("grid3");
-    const grid4 = document.getElementById("grid4");
     const layout = document.getElementById("layout");
-
-    grid1.addEventListener("click", showLayout);
-    grid2.addEventListener("click", showLayout);
-    grid3.addEventListener("click", showLayout);
-    grid4.addEventListener("click", showLayout);
-
-    function showLayout() {
+    const grids = document.querySelectorAll('.grid');
+    const content = document.getElementById('content');
+    let currentGrid = null;
+    
+    grids.forEach(grid => {
+        grid.addEventListener('click', function() {
         layout.style.display = "flex";
         document.body.style.overflow = "hidden";
-    }
+        currentGrid = this;
+        });
+    });
+    
+    const divs = content.querySelectorAll('.choice');
+    divs.forEach(div => {
+        div.addEventListener('click', function() {
+        currentGrid.textContent = this.textContent;
+        currentGrid = null;
+        closeLayout();
+        });
+    });
 });
 
 function closeLayout() {
