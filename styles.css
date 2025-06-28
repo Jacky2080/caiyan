@@ -3,6 +3,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     text-align: center;
+    user-select: none;
 }
 
 #header {
