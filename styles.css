@@ -1,15 +1,13 @@
 body {
-    padding: 0;
     margin: 0;
-    overflow-x: hidden;
     text-align: center;
     user-select: none;
 }
 
 #header {
     background: #F1F1F1;
-    padding: 15px;
-    width: 100%;
+    padding: 15px 0px 15px 15px;
+    width: calc(100% - 15px);
     color: #E48D21;
     position: sticky;
     top: 0px;
